@@ -1,7 +1,53 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9gA-W5-1Mm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Search Movies View Controller-->
+        <scene sceneID="xoM-RG-kms">
+            <objects>
+                <viewController storyboardIdentifier="MoviesList" id="9gA-W5-1Mm" customClass="SearchMoviesViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ffo-F7-xRc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-hn-sG3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="t2U-hn-sG3" firstAttribute="top" secondItem="6qu-nI-bU7" secondAttribute="top" id="RDJ-LO-Bhe"/>
+                            <constraint firstItem="6qu-nI-bU7" firstAttribute="bottom" secondItem="t2U-hn-sG3" secondAttribute="bottom" id="ZxU-ya-dqx"/>
+                            <constraint firstItem="6qu-nI-bU7" firstAttribute="trailing" secondItem="t2U-hn-sG3" secondAttribute="trailing" id="wxL-Ny-PJh"/>
+                            <constraint firstItem="t2U-hn-sG3" firstAttribute="leading" secondItem="6qu-nI-bU7" secondAttribute="leading" id="xxi-uO-32m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6qu-nI-bU7"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieListTableView" destination="t2U-hn-sG3" id="ewy-B2-RBO"/>
+                        <outlet property="searchDisplayController" destination="bSl-hA-3JF" id="dOH-sc-SBO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWT-Mu-CrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="bSl-hA-3JF">
+                    <connections>
+                        <outlet property="delegate" destination="9gA-W5-1Mm" id="ujG-Cd-UqC"/>
+                        <outlet property="searchContentsController" destination="9gA-W5-1Mm" id="0nD-4b-wFb"/>
+                        <outlet property="searchResultsDataSource" destination="9gA-W5-1Mm" id="upf-Y1-mM1"/>
+                        <outlet property="searchResultsDelegate" destination="9gA-W5-1Mm" id="Wom-Kh-0w6"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="29.600000000000001" y="35.532233883058474"/>
+        </scene>
+    </scenes>
 </document>

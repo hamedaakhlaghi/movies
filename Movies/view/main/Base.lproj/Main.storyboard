@@ -21,17 +21,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="GE3-Qr-Yn2" kind="show" id="7ac-cO-rTy"/>
+                        <segue destination="GE3-Qr-Yn2" kind="show" identifier="toMoviesList" id="7ac-cO-rTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="241" y="66"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--MoviesList-->
         <scene sceneID="SBE-XU-Izx">
             <objects>
-                <viewControllerPlaceholder id="GE3-Qr-Yn2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MoviesList" referencedIdentifier="MoviesList" id="GE3-Qr-Yn2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sqf-Hw-iJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="65"/>
