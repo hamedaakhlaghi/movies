@@ -6,10 +6,11 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     @IBOutlet weak var movieListTableView: UITableView!
     
     var resultSearchController = UISearchController()
-    
+    var presenter: SearchMoviesPresenterProtokol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = SearchMoviesPresenter(view: self)
     }
     
     func initUIComponents() {
@@ -44,7 +45,7 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        presenter?.search(keyWord: searchBar.text ?? "")
     }
     
     func updateSearchResults(for searchController: UISearchController) {

@@ -1,6 +1,10 @@
-import Foundation
 
-class MovieDBRepository: MovieRepositoryProtocol {
+import Foundation
+class MovieDataBaseRepository: MovieRepositoryProtocol {
+    func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
+        
+    }
+    
     func get(identifier: String, onDone: ((RepositoryResponse<Movie>) -> ())?) {
         
     }
@@ -16,8 +20,3 @@ class MovieDBRepository: MovieRepositoryProtocol {
     
     
 }
-
-
-
-
-

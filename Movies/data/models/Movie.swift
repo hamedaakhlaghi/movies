@@ -1,48 +1,52 @@
 import Foundation
 import ObjectMapper
 
-class Movie: Mappable {
-    
-    public var title: String?
-    public var year: String?
-    public var rated: String?
-    public var released: String?
-    public var runtime: String?
-    public var genre: String?
-    public var director: String?
-    public var writer: String?
-    public var actors: String?
-    public var plot: String?
-    public var language: String?
-    public var country: String?
-    public var awards: String?
-    public var posterUrl: String?
-    public var imdRating: String?
-    public var imdbId: String?
-    public var type: String?
+class Movie: NSObject, Mappable {
+   
     
     
-    required init?(map: Map) {
+    var title: String?
+    var year: String?
+    var rated: String?
+    var released: String?
+    var runtime: String?
+    var genre: String?
+    var director: String?
+    var writer: String?
+    var actors: String?
+    var plot: String?
+    var language: String?
+    var country: String?
+    var awards: String?
+    var posterUrl: String?
+    var imdRating: String?
+    var imdbId: String?
+    var type: String?
+    
+    
+    override init() {
         
     }
     
+    required init?(map: Map) {
+    }
+    
     func mapping(map: Map) {
-        map.shouldIncludeNilValues = true
-        title <- map["Title"]
-        type <- map["Type"]
-        year <- map["Year"]
-        released <- map["Released"]
-        runtime <- map["Runtime"]
-        genre <- map["Genre"]
-        director <- map["Director"]
-        writer <- map["Writer"]
-        actors <- map["Actors"]
-        plot <- map["Plot"]
-        language <- map["Language"]
-        country <- map["Country"]
-        awards <- map["Awards"]
-        posterUrl <- map["Poster"]
-        imdRating <- map["imdbRating"]
-        imdbId <- map["imdbID"]
+        self.title <- map["Title"]
+        self.type <- map["Type"]
+        self.year <- map["Year"]
+        self.released <- map["Released"]
+        self.runtime <- map["Runtime"]
+        self.genre <- map["Genre"]
+        self.director <- map["Director"]
+        self.writer <- map["Writer"]
+        self.actors <- map["Actors"]
+        self.plot <- map["Plot"]
+        self.language <- map["Language"]
+        self.country <- map["Country"]
+        self.awards <- map["Awards"]
+        self.posterUrl <- map["Poster"]
+        self.imdRating <- map["imdbRating"]
+        self.imdbId <- map["imdbID"]
     }
 }
