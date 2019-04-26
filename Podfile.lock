@@ -7,10 +7,14 @@ PODS:
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
   - R.swift.Library (5.0.0)
+  - SDWebImage (5.0.2):
+    - SDWebImage/Core (= 5.0.2)
+  - SDWebImage/Core (5.0.2)
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.2)
   - R.swift
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -19,6 +23,7 @@ SPEC REPOS:
     - ObjectMapper
     - R.swift
     - R.swift.Library
+    - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -26,7 +31,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
+  SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
 
-PODFILE CHECKSUM: d622ef1e7b6526c0b5baa411aa0fb9ae83c93c68
+PODFILE CHECKSUM: f0fa9f7f13199397ea3cee00072d369cbe22a36c
 
 COCOAPODS: 1.5.0

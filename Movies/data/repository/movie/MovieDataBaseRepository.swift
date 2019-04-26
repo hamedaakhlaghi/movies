@@ -1,6 +1,9 @@
 
 import Foundation
+import UIKit
 class MovieDataBaseRepository: MovieRepositoryProtocol {
+    
+    
     func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
         
     }
@@ -16,7 +19,5 @@ class MovieDataBaseRepository: MovieRepositoryProtocol {
     func update(_: Movie, onDone: ((RepositoryResponse<Movie>) -> ())?) {
         
     }
-    
-    
     
 }

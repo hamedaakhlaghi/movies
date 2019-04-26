@@ -1,14 +1,21 @@
 import Foundation
 import Alamofire
 import ObjectMapper
+import UIKit
+
 class MovieRestRepository: MovieRepositoryProtocol {
+    func getPoster(movie: Movie, onDone: ((RepositoryResponse<UIImage>) -> ())?) {
+        
+    }
+    
+   
     func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
         var queryItems = [URLQueryItem]()
         let keyWordQueryItem = URLQueryItem(name: "s", value: "\(keyWord)")
         queryItems.append(keyWordQueryItem)
         let apiKeyQueryItem = URLQueryItem(name: "apikey", value: "d06f0e3d")
         queryItems.append(apiKeyQueryItem)
-        let urlComponents = ApiHelper.newUrlComponentsInstance()
+        let urlComponents = ApiHelper.newUrlComponentsInstance(baseUrl: ApiHelper.movieDataBaseUrl)
         
         urlComponents.queryItems = queryItems
         let url = urlComponents.url!
@@ -20,7 +27,6 @@ class MovieRestRepository: MovieRepositoryProtocol {
                 onDone?(RepositoryResponse(error: response.error))
                 return
             }
-            response.value?.movies?.count
             onDone?(RepositoryResponse(value: response.value, restDataResponse: response))
         }
     }
@@ -36,9 +42,6 @@ class MovieRestRepository: MovieRepositoryProtocol {
     func update(_: Movie, onDone: ((RepositoryResponse<Movie>) -> ())?) {
         
     }
-    
-    
-    
 }
 
 

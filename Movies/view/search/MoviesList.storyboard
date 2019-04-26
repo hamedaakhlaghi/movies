@@ -35,6 +35,7 @@
                     <connections>
                         <outlet property="movieListTableView" destination="t2U-hn-sG3" id="ewy-B2-RBO"/>
                         <outlet property="searchDisplayController" destination="bSl-hA-3JF" id="dOH-sc-SBO"/>
+                        <outlet property="tableSearchResult" destination="t2U-hn-sG3" id="DXO-js-yCD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aWT-Mu-CrV" userLabel="First Responder" sceneMemberID="firstResponder"/>

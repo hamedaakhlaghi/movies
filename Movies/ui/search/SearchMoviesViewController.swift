@@ -1,13 +1,14 @@
 
 import UIKit
 
-class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, UISearchResultsUpdating, UISearchBarDelegate {
+class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, UISearchResultsUpdating, UISearchBarDelegate, SearchTableViewDelegate {
     
     @IBOutlet weak var movieListTableView: UITableView!
+    @IBOutlet weak var tableSearchResult: UITableView!
     
     var resultSearchController = UISearchController()
     var presenter: SearchMoviesPresenterProtokol?
-    
+    var searchResultTableAdapter: SearchResultTableAdapter?
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = SearchMoviesPresenter(view: self)
@@ -49,6 +50,24 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     }
     
     func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func setMovies(movies: [Movie]) {
+        initSearchResultTableView(movies: movies)
+    }
+    
+    func initSearchResultTableView(movies: [Movie]) {
+        searchResultTableAdapter = SearchResultTableAdapter()
+        tableSearchResult.register(UINib(nibName: R.nib.searchResultCellViewController.name, bundle: R.nib.searchResultCellViewController.bundle), forCellReuseIdentifier: R.nib.searchResultCellViewController.identifier)
+        tableSearchResult.delegate = searchResultTableAdapter
+        tableSearchResult.dataSource = searchResultTableAdapter
+        searchResultTableAdapter?.setDelegate(delegate: self)
+        searchResultTableAdapter?.setMovies(movies: movies)
+        tableSearchResult.reloadData()
+    }
+    
+    func selectedMovie(movie: Movie) {
         
     }
     

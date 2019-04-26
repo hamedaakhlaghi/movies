@@ -4,7 +4,7 @@ import ObjectMapper
 class Movie: NSObject, Mappable {
    
     
-    
+    var poster: UIImage?
     var title: String?
     var year: String?
     var rated: String?

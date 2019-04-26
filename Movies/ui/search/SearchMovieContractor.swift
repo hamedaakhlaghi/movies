@@ -1,6 +1,7 @@
 import Foundation
 
 protocol SearchMoviesViewProtocol: class {
+    func setMovies(movies: [Movie])
 }
 
 

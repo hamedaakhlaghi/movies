@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class MovieRepository: MovieRepositoryProtocol {
     
@@ -23,4 +24,5 @@ class MovieRepository: MovieRepositoryProtocol {
     func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
         restRepo.search(keyWord: keyWord, onDone: onDone)
     }
+    
 }
