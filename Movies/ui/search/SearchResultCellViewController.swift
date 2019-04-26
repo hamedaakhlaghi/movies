@@ -9,7 +9,6 @@ class SearchResultCellViewController: UITableViewCell {
     @IBOutlet weak var labelYear: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,9 +19,6 @@ class SearchResultCellViewController: UITableViewCell {
     func setMovie(movie: Movie) {
         
         imagePoster.sd_setImage(with: URL(string: movie.posterUrl!), placeholderImage: UIImage(named: "placeholder.png"))
-//        let url = URL(string: movie.posterUrl!)
-//        let data = try? Data(contentsOf: url!)
-//        imagePoster.image = UIImage(data: data!)
         labelTitle.text = movie.title
         labelType.text = movie.type
         labelYear.text = movie.year

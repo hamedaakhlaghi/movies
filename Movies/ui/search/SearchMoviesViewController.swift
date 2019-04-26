@@ -6,6 +6,7 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     @IBOutlet weak var movieListTableView: UITableView!
     @IBOutlet weak var tableSearchResult: UITableView!
     
+    @IBOutlet weak var labelNoResult: UILabel!
     var resultSearchController = UISearchController()
     var presenter: SearchMoviesPresenterProtokol?
     var searchResultTableAdapter: SearchResultTableAdapter?
@@ -14,19 +15,22 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
         presenter = SearchMoviesPresenter(view: self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        resultSearchController.isActive = true
+    }
+    
     func initUIComponents() {
         
         self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
-            
             controller.searchResultsUpdater = self
-            
+            controller.searchBar.barStyle = UIBarStyle.black
             controller.dimsBackgroundDuringPresentation = false
-            
+
             controller.searchBar.sizeToFit()
             controller.searchBar.delegate = self
             self.movieListTableView.tableHeaderView = controller.searchBar
-            
+            labelNoResult.isHidden = true
             return controller
             
         })()
@@ -64,11 +68,28 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
         tableSearchResult.dataSource = searchResultTableAdapter
         searchResultTableAdapter?.setDelegate(delegate: self)
         searchResultTableAdapter?.setMovies(movies: movies)
+        tableSearchResult.tableFooterView = UIView()
         tableSearchResult.reloadData()
     }
     
     func selectedMovie(movie: Movie) {
+        performSegue(withIdentifier: R.segue.searchMoviesViewController.toMovieViewController.identifier, sender: movie)
+    }
+    
+    func hideNoResult() {
+        labelNoResult.isHidden = true
+    }
+    
+    func showNoResult() {
+        labelNoResult.isHidden = false
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! MovieViewController
+        destination.setMovie(movie: sender as! Movie)
+        resultSearchController.isActive = false
+
     }
     
 }

@@ -8,7 +8,7 @@ class MovieDataBaseRepository: MovieRepositoryProtocol {
         
     }
     
-    func get(identifier: String, onDone: ((RepositoryResponse<Movie>) -> ())?) {
+    func get(_: Movie, onDone: ((RepositoryResponse<Movie>) -> ())?) {
         
     }
     

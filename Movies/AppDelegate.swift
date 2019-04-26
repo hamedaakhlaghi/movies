@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Movies
-//
-//  Created by Hamed on 4/21/19.
-//  Copyright © 2019 Hamed. All rights reserved.
-//
 
 import UIKit
 

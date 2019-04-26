@@ -6,9 +6,8 @@ class MovieRepository: MovieRepositoryProtocol {
     private let restRepo = MovieRestRepository()
     private let movieDBRepo = MovieDataBaseRepository()
     
-    func get(identifier: String, onDone: ((RepositoryResponse<Movie>) -> ())?) {
-        onDone?(RepositoryResponse(error: UnsupportedOperationException()))
-
+    func get(_ movie: Movie, onDone: ((RepositoryResponse<Movie>) -> ())?) {
+        restRepo.get(movie, onDone: onDone)
     }
     
     func getAll(onDone: ((RepositoryResponse<[Movie]>) -> ())?) {

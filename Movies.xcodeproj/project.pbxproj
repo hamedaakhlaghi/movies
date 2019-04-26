@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050C68E1227340BC00AAD998 /* MovieViewContractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C68E0227340BC00AAD998 /* MovieViewContractor.swift */; };
+		050C68E32273414F00AAD998 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C68E22273414F00AAD998 /* MovieViewController.swift */; };
+		050C68E52273418100AAD998 /* MoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050C68E42273418100AAD998 /* MoviePresenter.swift */; };
 		055E0166226C6B14003C4B38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E0165226C6B14003C4B38 /* AppDelegate.swift */; };
 		055E0168226C6B14003C4B38 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055E0167226C6B14003C4B38 /* MainViewController.swift */; };
 		055E016B226C6B14003C4B38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 055E0169226C6B14003C4B38 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050C68E0227340BC00AAD998 /* MovieViewContractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewContractor.swift; sourceTree = "<group>"; };
+		050C68E22273414F00AAD998 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		050C68E42273418100AAD998 /* MoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePresenter.swift; sourceTree = "<group>"; };
 		055E0162226C6B14003C4B38 /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		055E0165226C6B14003C4B38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		055E0167226C6B14003C4B38 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +135,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050C68DF2273409100AAD998 /* movie */ = {
+			isa = PBXGroup;
+			children = (
+				050C68E0227340BC00AAD998 /* MovieViewContractor.swift */,
+				050C68E22273414F00AAD998 /* MovieViewController.swift */,
+				050C68E42273418100AAD998 /* MoviePresenter.swift */,
+			);
+			path = movie;
+			sourceTree = "<group>";
+		};
 		055E0159226C6B14003C4B38 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +242,7 @@
 		055E0198226C6D3E003C4B38 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				050C68DF2273409100AAD998 /* movie */,
 				055E01A62270A5C8003C4B38 /* base */,
 				055E019F226C6E28003C4B38 /* main */,
 				055E019B226C6D8C003C4B38 /* search */,
@@ -493,7 +510,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -608,6 +625,7 @@
 				055E0166226C6B14003C4B38 /* AppDelegate.swift in Sources */,
 				055E01B322723ABC003C4B38 /* RepositoryResponse.swift in Sources */,
 				055E01A3226F7F04003C4B38 /* R.generated.swift in Sources */,
+				050C68E52273418100AAD998 /* MoviePresenter.swift in Sources */,
 				055E01B822723B16003C4B38 /* MovieRestRepository.swift in Sources */,
 				055E01BF22724633003C4B38 /* MovieDataBaseRepository.swift in Sources */,
 				055E01BA22723B16003C4B38 /* MovieRepositoryProtocol.swift in Sources */,
@@ -615,7 +633,9 @@
 				055E01C522726905003C4B38 /* SearchResult.swift in Sources */,
 				055E01D122730677003C4B38 /* SearchResultTableAdapter.swift in Sources */,
 				055E01BD22724573003C4B38 /* UnsupportedOperationException.swift in Sources */,
+				050C68E32273414F00AAD998 /* MovieViewController.swift in Sources */,
 				055E01C3227247FA003C4B38 /* ApiHelper.swift in Sources */,
+				050C68E1227340BC00AAD998 /* MovieViewContractor.swift in Sources */,
 				055E01C2227247FA003C4B38 /* Interceptor.swift in Sources */,
 				055E01A5226F81D3003C4B38 /* SearchMoviesViewController.swift in Sources */,
 				055E01B422723ABC003C4B38 /* Repository.swift in Sources */,

@@ -30,11 +30,12 @@ class SearchResultTableAdapter: NSObject, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.searchResultCellViewController.identifier, for: indexPath) as! SearchResultCellViewController
         cell.setMovie(movie: movies![indexPath.row])
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // move to movie view
+        searchTableViewDelegate?.selectedMovie(movie: movies![indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
