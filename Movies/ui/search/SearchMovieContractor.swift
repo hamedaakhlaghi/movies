@@ -9,5 +9,5 @@ protocol SearchMoviesViewProtocol: class {
 
 protocol SearchMoviesPresenterProtokol {
     init(view: SearchMoviesViewProtocol)
-    func search(keyWord: String)
+    func search(keyWord: String, pageNumber: Int)
 }

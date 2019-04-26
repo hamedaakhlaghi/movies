@@ -5,12 +5,14 @@ import UIKit
 
 class MovieRestRepository: MovieRepositoryProtocol {
     
-    func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
+    func search(keyWord: String, page: Int, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
         var queryItems = [URLQueryItem]()
         let keyWordQueryItem = URLQueryItem(name: "s", value: "\(keyWord)")
         queryItems.append(keyWordQueryItem)
         let apiKeyQueryItem = URLQueryItem(name: "apikey", value: "d06f0e3d")
         queryItems.append(apiKeyQueryItem)
+        let pageQueryItem = URLQueryItem(name: "page", value: "\(page)")
+        queryItems.append(pageQueryItem)
         let urlComponents = ApiHelper.newUrlComponentsInstance(baseUrl: ApiHelper.movieDataBaseUrl)
         
         urlComponents.queryItems = queryItems

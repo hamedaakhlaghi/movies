@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.2.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - ESPullToRefresh (2.9)
   - ObjectMapper (3.4.2)
   - R.swift (5.0.2):
     - R.swift.Library (~> 5.0.0)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.2)
+  - ESPullToRefresh (~> 2.9)
   - R.swift
   - SDWebImage (~> 5.0)
 
@@ -20,6 +22,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - ESPullToRefresh
     - ObjectMapper
     - R.swift
     - R.swift.Library
@@ -28,11 +31,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
+  ESPullToRefresh: ce058a36454a5032519cc9d8b45da217728cf104
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
 
-PODFILE CHECKSUM: f0fa9f7f13199397ea3cee00072d369cbe22a36c
+PODFILE CHECKSUM: e3676617df40234c90e283ab3c2bb0a733f721c8
 
 COCOAPODS: 1.5.0

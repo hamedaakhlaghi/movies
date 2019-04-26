@@ -1,11 +1,14 @@
 
 import UIKit
+import ESPullToRefresh
+
 
 class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, UISearchResultsUpdating, UISearchBarDelegate, SearchTableViewDelegate {
     
     @IBOutlet weak var movieListTableView: UITableView!
     @IBOutlet weak var tableSearchResult: UITableView!
-    
+    var movies = [Movie]()
+    var pageNumber = 1
     @IBOutlet weak var labelNoResult: UILabel!
     var resultSearchController = UISearchController()
     var presenter: SearchMoviesPresenterProtokol?
@@ -50,18 +53,29 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter?.search(keyWord: searchBar.text ?? "")
+        presenter?.search(keyWord: searchBar.text ?? "", pageNumber: pageNumber)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         
     }
     
-    func setMovies(movies: [Movie]) {
-        initSearchResultTableView(movies: movies)
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.movies.removeAll()
+        pageNumber = 1
     }
     
-    func initSearchResultTableView(movies: [Movie]) {
+    
+    func setMovies(movies: [Movie]) {
+        if movies.count == 0 {
+//            tableSearchResult.es.noticeNoMoreData()
+//            tableSearchResult.es.stopLoadingMore()
+        }
+        self.movies.append(contentsOf: movies)
+        initSearchResultTableView()
+    }
+    
+    func initSearchResultTableView() {
         searchResultTableAdapter = SearchResultTableAdapter()
         tableSearchResult.register(UINib(nibName: R.nib.searchResultCellViewController.name, bundle: R.nib.searchResultCellViewController.bundle), forCellReuseIdentifier: R.nib.searchResultCellViewController.identifier)
         tableSearchResult.delegate = searchResultTableAdapter
@@ -69,6 +83,11 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
         searchResultTableAdapter?.setDelegate(delegate: self)
         searchResultTableAdapter?.setMovies(movies: movies)
         tableSearchResult.tableFooterView = UIView()
+        tableSearchResult.es.addInfiniteScrolling {
+            [unowned self] in
+            self.pageNumber += 1
+            self.presenter?.search(keyWord: self.resultSearchController.searchBar.text!, pageNumber: self.pageNumber)
+        }
         tableSearchResult.reloadData()
     }
     

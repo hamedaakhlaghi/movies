@@ -20,8 +20,8 @@ class MovieRepository: MovieRepositoryProtocol {
 
     }
     
-    func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
-        restRepo.search(keyWord: keyWord, onDone: onDone)
+    func search(keyWord: String, page: Int, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
+        restRepo.search(keyWord: keyWord, page: page, onDone: onDone)
     }
     
 }

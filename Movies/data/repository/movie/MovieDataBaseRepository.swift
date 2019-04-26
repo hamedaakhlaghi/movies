@@ -4,7 +4,7 @@ import UIKit
 class MovieDataBaseRepository: MovieRepositoryProtocol {
     
     
-    func search(keyWord: String, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
+    func search(keyWord: String, page: Int, onDone: ((RepositoryResponse<MovieSearchResult>) -> ())?) {
         
     }
     

@@ -8,7 +8,7 @@ class SearchMoviesPresenter: SearchMoviesPresenterProtokol{
         self.view = view
     }
     
-    func search(keyWord: String) {
+    func search(keyWord: String, pageNumber: Int) {
         let movieRepository = MovieRepository()
         
         let onDataResponse : ((RepositoryResponse<MovieSearchResult>) -> ()) = { [weak self] response in
@@ -19,12 +19,12 @@ class SearchMoviesPresenter: SearchMoviesPresenterProtokol{
                 let movies = response.value?.movies ?? [Movie]()
                 if movies.count > 0 {
                     self?.view.hideNoResult()
-                } else {
+                } else if movies.count == 0 && pageNumber == 1{
                     self?.view.showNoResult()
                 }
                 self!.view.setMovies(movies: movies)
             }
         }
-        movieRepository.search(keyWord: keyWord, onDone: onDataResponse)
+        movieRepository.search(keyWord: keyWord, page: pageNumber, onDone: onDataResponse)
     }
 }
