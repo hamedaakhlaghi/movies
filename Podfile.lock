@@ -15,7 +15,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 5.2)
   - ESPullToRefresh (~> 2.9)
-  - R.swift
+  - R.swift (~> 5.0.2)
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
   SDWebImage: 6764b5fa0f73c203728052955dbefa2bf1f33282
 
-PODFILE CHECKSUM: e3676617df40234c90e283ab3c2bb0a733f721c8
+PODFILE CHECKSUM: 7b17a69ce6ce698991ccc879452a2c3ad2a0189d
 
 COCOAPODS: 1.5.0
