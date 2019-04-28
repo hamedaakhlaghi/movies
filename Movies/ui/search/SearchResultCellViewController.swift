@@ -17,7 +17,6 @@ class SearchResultCellViewController: UITableViewCell {
     }
     
     func setMovie(movie: Movie) {
-        
         imagePoster.sd_setImage(with: URL(string: movie.posterUrl!), placeholderImage: UIImage(named: "placeholder.png"))
         labelTitle.text = movie.title
         labelType.text = movie.type

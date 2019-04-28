@@ -1,5 +1,4 @@
 
-
 import Foundation
 import UIKit
 import ObjectMapper
@@ -19,13 +18,10 @@ class ApiHelper {
         return instance
     }()
     
-    //TODO(Fateme): Remove this in release mode
     private static var Manager : Alamofire.SessionManager = {
-        // Create the server trust policies
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             "www.omdbapi.com": .disableEvaluation
         ]
-        // Create custom manager
         let configuration = URLSessionConfiguration.default
         configuration.httpAdditionalHeaders = Alamofire.SessionManager.defaultHTTPHeaders
         let man = Alamofire.SessionManager(

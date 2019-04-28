@@ -54,11 +54,11 @@ class MovieRestRepository: MovieRepositoryProtocol {
     }
     
     func getAll(onDone: ((RepositoryResponse<[Movie]>) -> ())?) {
-        
+        onDone?(RepositoryResponse(error: UnsupportedOperationException()))
     }
     
     func update(_: Movie, onDone: ((RepositoryResponse<Movie>) -> ())?) {
-        
+        onDone?(RepositoryResponse(error: UnsupportedOperationException()))
     }
 }
 

@@ -7,9 +7,10 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     
     @IBOutlet weak var movieListTableView: UITableView!
     @IBOutlet weak var tableSearchResult: UITableView!
+    @IBOutlet weak var labelNoResult: UILabel!
+    
     var movies = [Movie]()
     var pageNumber = 1
-    @IBOutlet weak var labelNoResult: UILabel!
     var resultSearchController = UISearchController()
     var presenter: SearchMoviesPresenterProtokol?
     var searchResultTableAdapter: SearchResultTableAdapter?
@@ -23,7 +24,6 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     }
     
     func initUIComponents() {
-        
         self.resultSearchController = ({
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
@@ -35,9 +35,7 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
             self.movieListTableView.tableHeaderView = controller.searchBar
             labelNoResult.isHidden = true
             return controller
-            
         })()
-        
     }
     
     func initListeners() {
@@ -68,8 +66,6 @@ class SearchMoviesViewController: BaseViewController,SearchMoviesViewProtocol, U
     
     func setMovies(movies: [Movie]) {
         if movies.count == 0 {
-//            tableSearchResult.es.noticeNoMoreData()
-//            tableSearchResult.es.stopLoadingMore()
         }
         self.movies.append(contentsOf: movies)
         initSearchResultTableView()

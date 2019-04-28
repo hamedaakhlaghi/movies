@@ -10,7 +10,6 @@ class SearchMoviesPresenter: SearchMoviesPresenterProtokol{
     
     func search(keyWord: String, pageNumber: Int) {
         let movieRepository = MovieRepository()
-        
         let onDataResponse : ((RepositoryResponse<MovieSearchResult>) -> ()) = { [weak self] response in
             if response.error != nil {
                 print("error")

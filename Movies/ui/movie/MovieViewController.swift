@@ -6,6 +6,7 @@ class MovieViewController: BaseViewController, MovieViewProtocol {
     var movie: Movie?
     var presenter: MoviePresenterProtocol?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var labelDirector: UILabel!
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imagePoster: UIImageView!
@@ -35,8 +36,6 @@ class MovieViewController: BaseViewController, MovieViewProtocol {
         
     }
     
-    
-    
     func setMovie(movie: Movie) {
         self.movie = movie
     }
@@ -48,7 +47,6 @@ class MovieViewController: BaseViewController, MovieViewProtocol {
     }
     
     func presentMovie() {
-//        self.imagePoster.image = movie?.poster
         self.labelTitle.text = movie?.title
         self.labelYear.text = movie?.year
         self.labelGenre.text = movie?.genre
@@ -57,6 +55,5 @@ class MovieViewController: BaseViewController, MovieViewProtocol {
         self.labelRuntime.text = movie?.runtime
         self.labelDirector.text = movie?.director
         self.imagePoster.sd_setImage(with: URL(string: movie!.posterUrl!), placeholderImage: UIImage(named: "placeholder.png"))
-
     }
 }
